@@ -51,4 +51,13 @@ set(COMPONENT_SRCS
 )
 endif()
 
+if (CONFIG_MS_BOARD)
+message(STATUS "Current board name is " CONFIG_MS_BOARD)
+list(APPEND COMPONENT_ADD_INCLUDEDIRS ./ms_board)
+set(COMPONENT_SRCS
+./ms_board/board.c
+./ms_board/board_pins_config.c
+)
+endif()
+
 register_component()
